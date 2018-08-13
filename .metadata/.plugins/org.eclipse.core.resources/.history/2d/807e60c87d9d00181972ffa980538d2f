@@ -1,0 +1,30 @@
+
+import java.net.URL;
+
+import com.sun.syndication.feed.synd.*;
+import com.sun.syndication.io.SyndFeedInput;
+import com.sun.syndication.io.XmlReader;
+
+public class FeedReader {
+
+    public static void main(String[] args) {
+      
+            try {
+                URL feedUrl = new URL("https://www.yahoo.com/news/rss");
+
+                SyndFeedInput input = new SyndFeedInput();
+                SyndFeed feed = input.build(new XmlReader(feedUrl));
+
+                System.out.println(feed);
+
+              
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+                System.out.println("ERROR: "+ex.getMessage());
+            }
+     
+    }
+
+
+}

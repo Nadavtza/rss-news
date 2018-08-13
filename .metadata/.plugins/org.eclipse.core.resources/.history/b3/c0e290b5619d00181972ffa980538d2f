@@ -1,0 +1,23 @@
+package com.app;
+
+import java.net.*;
+import java.io.*;
+
+public class Rss {
+	public static void main(String[] args) {
+	
+		
+
+	}
+	
+	public static void readUrl(String urlAddress) {
+		URL readUrl;
+		try {
+			 readUrl = new URL(urlAddress);
+		} catch (MalformedURLException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		
+	}
+}

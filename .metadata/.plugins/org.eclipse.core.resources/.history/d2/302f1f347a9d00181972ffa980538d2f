@@ -1,0 +1,70 @@
+package com.app;
+
+import java.net.URL;
+import java.io.InputStreamReader;
+import com.rometools.rome.feed.synd.SyndFeed;
+import com.rometools.rome.io.SyndFeedInput;
+import com.rometools.rome.io.XmlReader;
+
+import java.util.List;
+import java.util.Iterator;
+
+public class tt {
+	  public static void main(String args[]) throws Exception {
+	    String feed = "http://www.rgagnon.com/feed.xml";
+
+	    URL feedUrl = new URL(feed);
+
+	    SyndFeedInput input = new SyndFeedInput();
+	    SyndFeed sf = input.build(new XmlReader(feedUrl));
+
+	    List entries = sf.getEntries();
+	    Iterator it = entries.iterator();
+	    while (it.hasNext()) {
+	      SyndEntry entry = (SyndEntry)it.next();
+	      System.out.println(entry.getTitle());
+	      System.out.println(entry.getLink());
+	      SyndContent description = entry.getDescription();
+	      System.out.println(description.getValue());
+	      System.out.println();
+	    }
+	    /*
+	       to parse from a file instead of a URL
+
+	       import java.io.FileInputStream;
+	       ...
+	       String feed = "feed.xml"
+	       FileInputStream fis = new FileInputStream(feed);
+
+	       SyndFeedInput input = new SyndFeedInput();
+	       SyndFeed sf = input.build(new XmlReader(fis));
+	    */
+	  }
+	  
+	  boolean ok = false;
+      
+          try {
+              URL feedUrl = new URL("https://www.yahoo.com/news/rss");
+
+              SyndFeedInput input = new SyndFeedInput();
+              SyndFeed feed = input.build(new XmlReader(feedUrl));
+
+              System.out.println(feed);
+
+              ok = true;
+          }
+          catch (Exception ex) {
+              ex.printStackTrace();
+              System.out.println("ERROR: "+ex.getMessage());
+          }
+      
+
+      if (!ok) {
+          System.out.println();
+          System.out.println("FeedReader reads and prints any RSS/Atom feed type.");
+          System.out.println("The first parameter must be the URL of the feed to read.");
+          System.out.println();
+      }
+  }
+	}
+

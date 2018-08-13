@@ -1,0 +1,49 @@
+package com.app;
+
+import java.net.*;
+import java.io.*;
+
+public class Rss {
+	public static void main(String[] args) {
+		String rss = readUrl("https://www.yahoo.com/news/rss");
+		if(rss != null) {
+			//System.out.println(rss);
+		}
+	}
+	
+	public static String readUrl(String urlAddress) {
+		URL readUrl;
+		try {
+			 readUrl = new URL(urlAddress);
+			 BufferedReader in = new BufferedReader(new InputStreamReader(readUrl.openStream()));
+			 String sourceCode = "";
+			 String line ;
+			 while((line = in.readLine()) != null) {
+				 System.out.println(line);
+				
+//					 if(line.contains("<title>")) {
+//						 int firstPos = line.indexOf("<title>");
+//						 int lastPos = line.indexOf("</title>");
+//						 String temp = line.substring(firstPos+"<title>".length(),lastPos);
+//						 
+//						 sourceCode += temp + "\n";
+//						 }
+				}
+			 
+			 
+			 in.close();
+			 
+			 return sourceCode;
+		
+		
+		} catch (MalformedURLException e) {
+			System.out.println("MalformedURLException - wrong url address");
+		} catch (IOException e) {
+			System.out.println("IOException - something get wrong while reading the content");
+		}
+		return null;
+		
+	
+		
+	}
+}

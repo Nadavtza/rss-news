@@ -1,0 +1,37 @@
+
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.utils.UUIDs;
+
+public class CassandraClient {
+
+//public static void main(final String[] args)
+//{
+//   final CassandraConnector client = new CassandraConnector();
+//   final String ipAddress ="localhost";
+//   final int port = 9042;
+//   
+//   client.connect(ipAddress, port);
+//   client.close();
+//}
+	
+	public static void main(String[] args) {
+        // Only a short example
+        // You must to take care about the several exception and the usage of the cluster and session objects...
+
+        Cluster cluster;
+        Session session;
+
+        // Connect to the local cluster with the keyspace demodb
+        cluster = Cluster.builder().addContactPoint("127.0.0.1").build();
+        session = cluster.connect();
+
+        // Insert one record - only for test...
+        session.execute("INSERT INTO test (username, name, surname)"
+                + " VALUES ('test_"+System.currentTimeMillis()+"', 'Andrea', 'Giassi')");           
+
+        session.close();
+        cluster.close();        
+    }   
+}

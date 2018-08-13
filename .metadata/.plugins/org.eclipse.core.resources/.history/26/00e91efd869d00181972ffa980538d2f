@@ -1,0 +1,21 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+//
+//import com.baeldung.cassandra.java.client.domain.Book;
+//import com.baeldung.cassandra.java.client.repository.BookRepository;
+//import com.baeldung.cassandra.java.client.repository.KeyspaceRepository;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.utils.UUIDs;
+
+public class CassandraClient {
+
+public static void main(final String[] args)
+{
+   final CassandraConnector client = new CassandraConnector();
+   final String ipAddress = args.length > 0 ? args[0] : "localhost";
+   final int port = args.length > 1 ? Integer.parseInt(args[1]) : 9042;
+   
+   client.connect(ipAddress, port);
+   client.close();
+}
+}

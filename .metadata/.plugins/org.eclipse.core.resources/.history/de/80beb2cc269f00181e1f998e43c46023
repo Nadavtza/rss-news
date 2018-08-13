@@ -1,0 +1,17 @@
+
+
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.utils.UUIDs;
+
+public class CassandraClient {
+
+public static void main(final String[] args)
+{
+   final CassandraConnector client = new CassandraConnector();
+   final String ipAddress ="localhost";
+   final int port = 9042;
+   
+   client.connect(ipAddress, port);
+   client.close();
+}
+}

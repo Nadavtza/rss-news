@@ -1,0 +1,15 @@
+package com.app;
+
+
+public class Rss {
+	public static void main(String[] args) {
+	
+		
+
+	}
+	
+	public static void readUrl(String urlAdress) {
+		URL readUrl = new URL(urlAddress);
+		
+	}
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.jdom2.input.SAXBuilder"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndEntry"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndContent"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.Session"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.ResultSet"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.Row"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.policies.DefaultRetryPolicy"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.policies.DCAwareRoundRobinPolicy"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.policies.TokenAwarePolicy"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.querybuilder.QueryBuilder"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.Cluster"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.Cluster.Builder"/>
+</qualifiedTypeNameHistroy>

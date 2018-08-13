@@ -1,0 +1,64 @@
+package com.app;
+import java.io.File;
+import org.w3c.dom.Document;
+import org.w3c.dom.*;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException; 
+
+public class Try {
+
+    public static void main (String argv []){
+    try {
+
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse (new File("book.xml"));
+
+            // normalize text representation
+            doc.getDocumentElement ().normalize ();
+      
+            NodeList listOfTitles = doc.getElementsByTagName("title");
+            int totalTitles = listOfTitles.getLength();
+         
+
+            for(int s=0; s<listOfTitles.getLength() ; s++){
+
+
+                Node firstPersonNode = listOfTitles.item(s);
+                if(firstPersonNode.getNodeType() == Node.ELEMENT_NODE){
+
+
+                    Element firstPersonElement = (Element)firstPersonNode;
+                    System.println(firstPersonElement);
+
+                    //------
+
+
+                }//end of if clause
+
+
+            }//end of for loop with s var
+
+
+        }catch (SAXParseException err) {
+        System.out.println ("** Parsing error" + ", line " 
+             + err.getLineNumber () + ", uri " + err.getSystemId ());
+        System.out.println(" " + err.getMessage ());
+
+        }catch (SAXException e) {
+        Exception x = e.getException ();
+        ((x == null) ? e : x).printStackTrace ();
+
+        }catch (Throwable t) {
+        t.printStackTrace ();
+        }
+        //System.exit (0);
+
+    }//end of main
+
+
+	}
+
