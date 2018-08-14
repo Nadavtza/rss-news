@@ -1,12 +1,11 @@
 import java.net.URL;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-import com.sun.syndication.feed.synd.SyndContent;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
@@ -23,11 +22,16 @@ public class Client {
 	   client.createTable();
 	   
 	   String url = "https://www.yahoo.com/news/rss";
-	   
-	//   client.ins();
 	   ReadRss(client,url);
 	   
-	   client.selectUrl("Local Fisherman And Tourist Killed In Kenya Hippo Attacks");
+	   client.selectUrl("url");
+	   
+//	   try {
+//		client.selectUrl2("url", "2018-01-01");
+//	   } catch (ParseException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	   }
 	   client.close();  
 	}  
 	
@@ -39,15 +43,17 @@ public class Client {
 
               SyndFeedInput input = new SyndFeedInput();
               SyndFeed feed = input.build(new XmlReader(feedUrl));
-
-              List entries = feed.getEntries();
-              Iterator it = entries.iterator();
+  
+              
+              List<SyndEntry> entries = feed.getEntries();
+              Iterator<SyndEntry> it = entries.iterator();
               News news;
               while (it.hasNext()) {
-                SyndEntry entry = (SyndEntry)it.next();
-          
-                news = new News(entry.getPublishedDate() , entry.getTitle(), "url", entry.getLink());
-                client.insertNews(news);    
+                SyndEntry entry = it.next();
+                  
+                news = new News(entry.getPublishedDate(), entry.getTitle(), "url", entry.getLink());
+                client.insertNews(news);  
+                break; //////////remove break
               }
 
             

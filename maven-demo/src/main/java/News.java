@@ -1,3 +1,4 @@
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -21,9 +22,7 @@ public class News {
 	public Date getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	
 	
 	
 	
