@@ -1,0 +1,40 @@
+import java.util.UUID;
+
+public class News {
+	private UUID id;
+	private String title;
+	private String descrition;
+	private String url;
+	
+	public News(String title, String descrition , String url) {
+		this.id =UUID.randomUUID();
+		this.title = title;
+		this.descrition = descrition;
+		this.url = url;
+	}
+	public UUID getId() {
+		return id;
+	}
+	public void setId(UUID id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDesc() {
+		return descrition;
+	}
+	public void setDesc(String desc) {
+		this.descrition = desc;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
+}

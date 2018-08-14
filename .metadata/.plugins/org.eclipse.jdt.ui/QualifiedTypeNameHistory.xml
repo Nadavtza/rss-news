@@ -7,12 +7,19 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.Session"/>
-    <fullyQualifiedTypeName name="com.datastax.driver.core.ResultSet"/>
-    <fullyQualifiedTypeName name="com.datastax.driver.core.Row"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.policies.DefaultRetryPolicy"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.policies.DCAwareRoundRobinPolicy"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.policies.TokenAwarePolicy"/>
-    <fullyQualifiedTypeName name="com.datastax.driver.core.querybuilder.QueryBuilder"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.Cluster"/>
     <fullyQualifiedTypeName name="com.datastax.driver.core.Cluster.Builder"/>
+    <fullyQualifiedTypeName name="com.sun.syndication.feed.synd.SyndContent"/>
+    <fullyQualifiedTypeName name="com.sun.syndication.feed.module.Module"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.sun.syndication.feed.synd.SyndFeedImpl"/>
+    <fullyQualifiedTypeName name="com.sun.syndication.feed.rss.Item"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.querybuilder.QueryBuilder"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.querybuilder.Insert"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.ResultSet"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.Row"/>
+    <fullyQualifiedTypeName name="com.datastax.driver.core.schemabuilder.CreateIndex"/>
 </qualifiedTypeNameHistroy>
