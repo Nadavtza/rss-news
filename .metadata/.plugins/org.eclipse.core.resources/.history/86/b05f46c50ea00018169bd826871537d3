@@ -87,14 +87,15 @@ public class CassandraConnector
 		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
          String formattedDate = formatter.format(news.getDate());
 			 try
-			    {  
-		        Insert insert = QueryBuilder.insertInto("news", "rss")
-		        							 .value("id", news.getId())
-		                                    .value("title", news.getTitle())
-		                                    .value("url", news.getUrl())
-		                                    .value("link", news.getLink())
-		                                    .value("date", formattedDate);
-		        session.execute(insert.toString());
+			    { 
+				 
+			        Insert insert = QueryBuilder.insertInto("news", "rss")
+			        							 .value("id", news.getId())
+			                                    .value("title", news.getTitle())
+			                                    .value("url", news.getUrl())
+			                                    .value("link", news.getLink())
+			                                    .value("date", formattedDate);
+			        session.execute(insert.toString());
 			    }
 			    catch (Exception ex)
 			    {

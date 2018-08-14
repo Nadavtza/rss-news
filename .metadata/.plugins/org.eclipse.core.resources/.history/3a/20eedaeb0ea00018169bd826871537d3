@@ -25,7 +25,6 @@ public class Client {
 	   ReadRss(client,url);
 	   
 	 //without date
-	   
 //	   
 //	   try {
 //		client.selectUrl("url", null);
@@ -33,7 +32,6 @@ public class Client {
 //		// TODO Auto-generated catch block
 //		e.printStackTrace();
 //	   }
-	   
 	   
 	 //with date
 	   try {

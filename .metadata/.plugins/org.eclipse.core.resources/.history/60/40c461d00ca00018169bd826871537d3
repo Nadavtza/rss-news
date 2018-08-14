@@ -87,14 +87,15 @@ public class CassandraConnector
 		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
          String formattedDate = formatter.format(news.getDate());
 			 try
-			    {  
-		        Insert insert = QueryBuilder.insertInto("news", "rss")
-		        							 .value("id", news.getId())
-		                                    .value("title", news.getTitle())
-		                                    .value("url", news.getUrl())
-		                                    .value("link", news.getLink())
-		                                    .value("date", formattedDate);
-		        session.execute(insert.toString());
+			    { 
+				 
+			        Insert insert = QueryBuilder.insertInto("news", "rss")
+			        							 .value("id", news.getId())
+			                                    .value("title", news.getTitle())
+			                                    .value("url", news.getUrl())
+			                                    .value("link", news.getLink())
+			                                    .value("date", formattedDate);
+			        session.execute(insert.toString());
 			    }
 			    catch (Exception ex)
 			    {
@@ -109,14 +110,15 @@ public class CassandraConnector
 		Statement selectQuery;
 		if(d == null) {
 			selectQuery =  QueryBuilder.select().all().from("news","rss")
-					.where(QueryBuilder.eq("url",url));
+					.where(QueryBuilder.eq("url",url)).enableTracing();
 		}
 		else {
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = dateFormat.parse(d);
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT+6"));
 			
 			selectQuery =  QueryBuilder.select().all().from("news","rss")
-					.where(QueryBuilder.eq("date",date)).and(QueryBuilder.eq("url",url)).allowFiltering();
+					.where(QueryBuilder.eq("date",date)).and(QueryBuilder.eq("url",url)).allowFiltering().enableTracing();
 		}
 		
 		ResultSetFuture future = session.executeAsync(selectQuery);

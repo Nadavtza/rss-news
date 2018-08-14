@@ -14,8 +14,8 @@ public class Client {
 	public static void main(final String[] args)  
 	{  
 	   final CassandraConnector client = new CassandraConnector();  
-	   final String ipAddress = "localhost";  
-	   final int port =  9042;  
+	   final String ipAddress = args.length > 0 ? args[0] : "localhost";  
+	   final int port = args.length > 1 ? Integer.parseInt(args[1]) : 9042;  
 	   System.out.println("Connecting to IP Address " + ipAddress + ":" + port + "...");  
 	   client.connect(ipAddress, port);  
 	
@@ -24,25 +24,14 @@ public class Client {
 	   String url = "https://www.yahoo.com/news/rss";
 	   ReadRss(client,url);
 	   
-	 //without date
+	  // client.selectUrl("url");
 	   
-//	   
-//	   try {
-//		client.selectUrl("url", null);
-//	   } catch (ParseException e) {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	   }
-	   
-	   
-	 //with date
 	   try {
-			client.selectUrl("url", "2018-08-14");
-		   } catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		   }
-	   
+		client.selectUrl2("url", null);
+	   } catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	   }
 	   client.close();  
 	}  
 	
@@ -64,7 +53,7 @@ public class Client {
                   
                 news = new News(entry.getPublishedDate(), entry.getTitle(), "url", entry.getLink());
                 client.insertNews(news);  
-              
+                break; //////////remove break
               }
 
             
