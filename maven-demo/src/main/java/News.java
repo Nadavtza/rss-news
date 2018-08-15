@@ -14,7 +14,6 @@ public class News {
 	public News(Date date,String title ,String url, String link) {
 		this.id =UUID.randomUUID();
 		this.title = title;
-		
 		this.url = url;
 		this.link = link;
 		this.date = date ;

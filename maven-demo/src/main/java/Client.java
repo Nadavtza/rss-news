@@ -1,6 +1,5 @@
 import java.net.URL;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -54,6 +53,7 @@ public class Client {
 
               SyndFeedInput input = new SyndFeedInput();
               SyndFeed feed = input.build(new XmlReader(feedUrl));
+              
   
               
               List<SyndEntry> entries = feed.getEntries();
@@ -61,10 +61,10 @@ public class Client {
               News news;
               while (it.hasNext()) {
                 SyndEntry entry = it.next();
-                  
+                //need to fix url
                 news = new News(entry.getPublishedDate(), entry.getTitle(), "url", entry.getLink());
                 client.insertNews(news);  
-              
+             
               }
 
             

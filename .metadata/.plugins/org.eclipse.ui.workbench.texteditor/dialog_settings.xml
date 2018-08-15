@@ -2,16 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="rss" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="rss3"/>
+			<item value="rss"/>
 			<item value="Airbnb Scraps Great Wall Competition After Chinese Outcry"/>
 			<item value="Kris Kobach&amp;apos;s Lead In Kansas Governor&amp;apos;s Race Shrinks After Vote Count Discrepancy"/>
 		</list>
 		<list key="replacehistory">
+			<item value="rss"/>
+			<item value="rss3"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
