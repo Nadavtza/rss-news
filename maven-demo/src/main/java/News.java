@@ -4,8 +4,7 @@ import java.util.UUID;
 
 public class News {
 	private UUID id;
-	private String title;
-	
+	private String title;	
 	private String url;
 	private String link;
 	private Date date;

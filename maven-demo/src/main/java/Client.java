@@ -3,10 +3,10 @@ import java.text.ParseException;
 import java.util.Iterator;
 import java.util.List;
 
-import com.sun.syndication.feed.synd.SyndEntry;
-import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.SyndFeedInput;
-import com.sun.syndication.io.XmlReader;
+import com.rometools.rome.feed.synd.SyndEntry;
+import com.rometools.rome.feed.synd.SyndFeed;
+import com.rometools.rome.io.SyndFeedInput;
+import com.rometools.rome.io.XmlReader;
 
 public class Client {
 	
@@ -21,26 +21,25 @@ public class Client {
 	   client.createTable();
 	   
 	   String url = "https://www.yahoo.com/news/rss";
+	   String urlForTest = "https://www.yahoo.com/news/" ;
 	   ReadRss(client,url);
 	   
-	 //without date
-	   
-//	   
-//	   try {
-//		client.selectUrl("url", null);
-//	   } catch (ParseException e) {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	   }
+	 
+	   //without date insert null as second argument	     
+	   try {
+		client.selectUrl(urlForTest, null);
+	   } catch (ParseException e) {
+		e.printStackTrace();
+	   }
 	   
 	   
 	 //with date
-	   try {
-			client.selectUrl("url", "2018-08-14");
-		   } catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		   }
+//	   try {
+//			client.selectUrl(urlForTest, "2018-08-16");
+//		   } catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		   }
 	   
 	   client.close();  
 	}  
@@ -50,21 +49,17 @@ public class Client {
 		System.out.println("Downloading Rss..");   
    	   try {
               URL feedUrl = new URL(url);
-
               SyndFeedInput input = new SyndFeedInput();
               SyndFeed feed = input.build(new XmlReader(feedUrl));
-              
-  
-              
+                  
               List<SyndEntry> entries = feed.getEntries();
               Iterator<SyndEntry> it = entries.iterator();
               News news;
               while (it.hasNext()) {
                 SyndEntry entry = it.next();
-                //need to fix url
-                news = new News(entry.getPublishedDate(), entry.getTitle(), "url", entry.getLink());
+                   
+                news = new News(entry.getPublishedDate(), entry.getTitle(),  entry.getSource().getLink(), entry.getLink());
                 client.insertNews(news);  
-             
               }
 
             
