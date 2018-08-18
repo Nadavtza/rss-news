@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rss" key="selection"/>
+		<item value="Rack" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Rack"/>
+			<item value="https://www.yahoo.com/news/"/>
+			<item value="As newspapers unite to defend"/>
+			<item value="Brennan fires back at Trump: Claim"/>
+			<item value="Bodies of missing Colorado girls allegedly killed by dad foun"/>
 			<item value="rss3"/>
 			<item value="rss"/>
 			<item value="Airbnb Scraps Great Wall Competition After Chinese Outcry"/>
@@ -22,7 +27,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="506" key="DIALOG_X_ORIGIN"/>
-		<item value="240" key="DIALOG_Y_ORIGIN"/>
+		<item value="823" key="DIALOG_X_ORIGIN"/>
+		<item value="510" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

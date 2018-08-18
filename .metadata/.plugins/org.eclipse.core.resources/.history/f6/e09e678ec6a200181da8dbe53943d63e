@@ -20,20 +20,26 @@ public class Client {
 	
 	   client.createTable();
 	   
-	   //Download Rss to DB
 	   String url = "https://www.yahoo.com/news/rss";
-	   ReadRss(client,url);
-  
-	   //Query
 	   String urlForTest = "https://www.yahoo.com/news/" ;
-	   String date = "2018-08-16"; // || null
+	   ReadRss(client,url);
 	   
+	 
+	   //without date insert null as second argument	     
 	   try {
-		client.selectUrl(urlForTest, date);
+		client.selectUrl(urlForTest, null);
 	   } catch (ParseException e) {
 		e.printStackTrace();
 	   }
-	  
+	   
+	   
+	 //with date
+//	   try {
+//			client.selectUrl(urlForTest, "2018-08-16");
+//		   } catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		   }
 	   
 	   client.close();  
 	}  
@@ -50,11 +56,12 @@ public class Client {
               Iterator<SyndEntry> it = entries.iterator();
               News news;
               while (it.hasNext()) {
-                SyndEntry entry = it.next();    
+                SyndEntry entry = it.next();
+                   
                 news = new News(entry.getPublishedDate(), entry.getTitle(),  entry.getSource().getLink(), entry.getLink());
                 client.insertNews(news);  
               }
-              System.out.println("Done downloading Rss..");   
+
             
           }
           catch (Exception ex) {

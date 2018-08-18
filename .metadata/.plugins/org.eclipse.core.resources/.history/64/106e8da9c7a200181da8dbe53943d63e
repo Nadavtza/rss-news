@@ -54,7 +54,7 @@ public class Client {
                 news = new News(entry.getPublishedDate(), entry.getTitle(),  entry.getSource().getLink(), entry.getLink());
                 client.insertNews(news);  
               }
-              System.out.println("Done downloading Rss..");   
+              //System.out.println("Done downloading Rss..");   
             
           }
           catch (Exception ex) {

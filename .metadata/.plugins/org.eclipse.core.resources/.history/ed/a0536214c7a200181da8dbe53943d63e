@@ -50,11 +50,12 @@ public class Client {
               Iterator<SyndEntry> it = entries.iterator();
               News news;
               while (it.hasNext()) {
-                SyndEntry entry = it.next();    
+                SyndEntry entry = it.next();
+                   
                 news = new News(entry.getPublishedDate(), entry.getTitle(),  entry.getSource().getLink(), entry.getLink());
                 client.insertNews(news);  
               }
-              System.out.println("Done downloading Rss..");   
+
             
           }
           catch (Exception ex) {

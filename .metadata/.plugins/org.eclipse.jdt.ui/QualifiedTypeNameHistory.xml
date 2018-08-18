@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.jdom2.input.SAXBuilder"/>
-    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndEntry"/>
     <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndContent"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -31,4 +30,11 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="java.util.TimeZone"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.io.XmlReader"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.io.SyndFeedInput"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndFeed"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndContentImpl"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndEntry"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.module.impl.ModuleUtils"/>
+    <fullyQualifiedTypeName name="com.rometools.rome.feed.synd.SyndEnclosure"/>
 </qualifiedTypeNameHistroy>

@@ -51,7 +51,7 @@ public class CassandraConnector
    
    public void dropSchema() {
 	   session.execute("DROP KEYSPACE \"news\"");
-	   System.out.println("Finished dropping keyspace.");
+	    System.out.println("Finished dropping keyspace.");
    }
    
 	
@@ -79,20 +79,21 @@ public class CassandraConnector
 	public void insertNews(News news)  {  	
 		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
          String formattedDate = formatter.format(news.getDate());
-		 try
-		    {  
-	        Insert insert = QueryBuilder.insertInto("news", "rss")
-	        							 .value("id", news.getId())
-	                                    .value("title", news.getTitle())
-	                                    .value("url", news.getUrl())
-	                                    .value("link", news.getLink())
-	                                    .value("date", formattedDate);
-	        session.execute(insert.toString());
-		    }
-		    catch (Exception ex)
-		    {
-		        ex.printStackTrace();
-		    }
+			 try
+			    {  
+		        Insert insert = QueryBuilder.insertInto("news", "rss")
+		        							 .value("id", news.getId())
+		                                    .value("title", news.getTitle())
+		                                    .value("url", news.getUrl())
+		                                    .value("link", news.getLink())
+		                                    .value("date", formattedDate);
+		        session.execute(insert.toString());
+		        System.out.println("news.getTitle() " +news.getTitle() + "  " + +"news.getUrl() "news.getUrl() );   
+			    }
+			    catch (Exception ex)
+			    {
+			        ex.printStackTrace();
+			    }
 	}  
 	
 	
